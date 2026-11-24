@@ -152,9 +152,51 @@ diameter, length, and head clearance against the printed part.
 - Do not enlarge holes or change fit-critical geometry unless the resulting
   dimensions are measured and verified.
 
+## YUBI Lite Gripper
+
+YUBI Lite also includes a set of hand-independent printed parts for a YUBI
+Gripper mounted on the [SO-101 arm](https://github.com/TheRobotStudio/SO-ARM100).
+These parts are separate from the right- and left-hand YUBI Lite Glove parts
+described above and must not be mixed with the glove upper plate, lower plate,
+or fingers.
+
+This Gripper variant is intended to use the Feetech STS3215 servos used by
+SO-101. It does not use the Dynamixel motor specified by the original YUBI
+Gripper BOM.
+
+The STEP files are located in `STEP/gripper/lite/`, and the STL files are
+located in `STL/gripper/lite/`.
+
+The standard upper plate is designed for the Innomaker camera. If using the
+ELP camera specified in the [original YUBI Gripper BOM](../BOM/YUBI%20Gripper_DYNAMIXEL_BOM.md),
+use `YUBI_Lite_Gripper_UpperPlate_ELP` instead. It replaces the standard upper
+plate; do not print or install both upper plates.
+
+| Printed part | Qty. | File basename |
+| --- | ---: | --- |
+| Upper plate, Innomaker camera (standard) | 1 | `YUBI_Lite_Gripper_UpperPlate` |
+| Under plate | 1 | `YUBI_Lite_Gripper_UnderPlate` |
+| Right finger | 1 | `YUBI_Lite_Gripper_Finger_R` |
+| Left finger | 1 | `YUBI_Lite_Gripper_Finger_L` |
+| Right flap | 1 | `YUBI_Lite_Gripper_Flap_R` |
+| Left flap | 1 | `YUBI_Lite_Gripper_Flap_L` |
+
+Only individual part files are provided for this variant; an assembly STEP
+file is not included. The table above covers the Lite-specific printed parts
+only. Select one upper plate: the standard `YUBI_Lite_Gripper_UpperPlate` for
+the Innomaker camera, or `YUBI_Lite_Gripper_UpperPlate_ELP` for the ELP camera.
+The ELP upper plate is an optional camera compatibility part and replaces the
+standard upper plate. The SO-101 motor, controller, wiring, and other arm-side components
+should be selected according to the [SO-101 documentation](https://github.com/TheRobotStudio/SO-ARM100).
+For other YUBI Gripper components, refer to the [original YUBI Gripper
+BOM](../BOM/YUBI%20Gripper_DYNAMIXEL_BOM.md) only where the part is compatible
+with the SO-101 integration; the original Dynamixel motor and robot-interface
+parts must not be substituted without verification.
+
 ## License and Modification Notice
 
 YUBI Lite is a modified variant of the original YUBI Glove.
+The YUBI Lite Gripper files are derived from the original YUBI Gripper design.
 
 - Original copyright: Copyright 2026 Toyota Motor Corporation
 - Modified by: Jumpei Arima
@@ -170,4 +212,5 @@ Summary of modifications:
 - Replaced the ESP32/AS5601 electronics with ENCUSB.
 - Removed heat-set inserts and simplified fastening.
 - Simplified the covers, wiring, and purchased components.
+- Added a set of YUBI Lite Gripper-specific printed parts.
 
