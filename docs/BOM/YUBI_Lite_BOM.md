@@ -2,9 +2,10 @@
 
 ## Scope
 
-This BOM contains the parts required to build one YUBI Lite glove. Select the
-right-hand or left-hand printed parts and Quest controller for the intended
-configuration.
+The glove sections of this BOM contain the parts required to build one YUBI
+Lite glove. Select the right-hand or left-hand printed parts and Quest
+controller for the intended configuration. The separate YUBI Lite Gripper
+section lists only the Lite-specific gripper parts.
 
 YUBI Lite is an additional variant and does not replace the original
 [YUBI Glove BOM](YUBI%20Glove%20Assy_BOM.md). Quantities below are for one
@@ -125,6 +126,49 @@ The following original YUBI Glove items are not required by YUBI Lite.
 | `CBSTNR3-5` | 2 | Removed |
 | `PX-10H15_HYPER V SHEET` | 2 pieces | Replaced by commercial anti-slip sheet |
 | Old encoder-board screws | Various | Replaced by four M2 x 6 mm screws |
+
+## YUBI Lite Gripper Variant
+
+The following printed parts form the YUBI Lite Gripper-specific CAD set for
+mounting to the [SO-101 arm](https://github.com/TheRobotStudio/SO-ARM100).
+This table is separate from the YUBI Lite Glove quantities above.
+
+The actuator for this variant is the Feetech STS3215 servo used by SO-101.
+The Dynamixel motor listed in the original YUBI Gripper BOM is not used for
+YUBI Lite Gripper.
+
+| No. | Part No. | Type | Part name | Qty. | Material | Remarks | File basename |
+| ---: | --- | --- | --- | ---: | --- | --- | --- |
+| G1 | YUBI_Lite_Gripper_UpperPlate | 3D-PRINTED | Gripper upper plate | 1 | PLA | YUBI Lite Gripper only | `YUBI_Lite_Gripper_UpperPlate` |
+| G2 | YUBI_Lite_Gripper_UnderPlate | 3D-PRINTED | Gripper under plate | 1 | PLA | YUBI Lite Gripper only | `YUBI_Lite_Gripper_UnderPlate` |
+| G3 | YUBI_Lite_Gripper_Finger_R | 3D-PRINTED | Right finger | 1 | PLA | YUBI Lite Gripper only | `YUBI_Lite_Gripper_Finger_R` |
+| G4 | YUBI_Lite_Gripper_Finger_L | 3D-PRINTED | Left finger | 1 | PLA | YUBI Lite Gripper only | `YUBI_Lite_Gripper_Finger_L` |
+| G5 | YUBI_Lite_Gripper_Flap_R | 3D-PRINTED | Right flap | 1 | PLA | YUBI Lite Gripper only | `YUBI_Lite_Gripper_Flap_R` |
+| G6 | YUBI_Lite_Gripper_Flap_L | 3D-PRINTED | Left flap | 1 | PLA | YUBI Lite Gripper only | `YUBI_Lite_Gripper_Flap_L` |
+
+The STEP files are stored in `STEP/gripper/lite/`, and the STL files are stored
+in `STL/gripper/lite/`. No assembly STEP is provided. The standard upper plate
+is for the Innomaker camera; when using the ELP camera specified in the
+[original YUBI Gripper BOM](YUBI%20Gripper_DYNAMIXEL_BOM.md), use the optional
+ELP upper plate below in place of G1. Select and print only one upper plate.
+
+This table defines only the Lite-specific printed parts. Refer to the
+[SO-101 documentation](https://github.com/TheRobotStudio/SO-ARM100) for the
+STS3215 motor, motor controller, wiring, and other arm-side components. Refer
+to the [original YUBI Gripper BOM](YUBI%20Gripper_DYNAMIXEL_BOM.md) for other
+components only after checking compatibility with the SO-101 integration; do
+not carry over its Dynamixel motor or robot-interface parts automatically.
+The YUBI Lite Glove electronics, Quest controller, and glove-specific fastener
+sections above do not apply to the YUBI Lite Gripper.
+
+### Optional ELP Camera Upper Plate
+
+| No. | Part No. | Type | Part name | Qty. | Material | Remarks | File basename |
+| ---: | --- | --- | --- | ---: | --- | --- | --- |
+| G7 | YUBI_Lite_Gripper_UpperPlate_ELP | 3D-PRINTED | Gripper upper plate | 1 | PLA | ELP camera option; replaces G1 | `YUBI_Lite_Gripper_UpperPlate_ELP` |
+
+Use G1 for the Innomaker camera or G7 for the ELP camera. G7 is an optional
+camera compatibility part and is not an additional part in the same gripper.
 
 ## Vendor Link Notice
 
